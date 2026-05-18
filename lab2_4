@@ -1,1 +1,24 @@
-
+Node<int>* delete_node(Node<int>* head, int value) {
+    if (head == nullptr) return nullptr;
+    
+    if (head->val == value) {
+        Node<int>* newHead = head->next;
+        head->next = nullptr; 
+        delete head;
+        return newHead;
+    }
+    
+    Node<int>* current = head;
+    while (current->next != nullptr) {
+        if (current->next->val == value) {
+            Node<int>* toDelete = current->next;
+            current->next = toDelete->next;
+            toDelete->next = nullptr; 
+            delete toDelete;
+            return head;
+        }
+        current = current->next;
+    }
+    
+    return head;
+}
