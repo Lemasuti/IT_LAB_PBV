@@ -1,1 +1,13 @@
-
+std::vector<std::string> process_tasks_fifo(std::vector<std::string>& tasks) {
+    std::queue<std::string> q;
+    for (const std::string& task : tasks) {
+        q.push(task);
+    }
+    
+    std::vector<std::string> result;
+    while (!q.empty()) {
+        result.push_back(q.front());
+        q.pop();
+    }
+    return result;
+}
