@@ -1,1 +1,4 @@
-
+std::vector<int> insert_at_position(std::vector<int>& arr, int index, int value) {
+    arr.insert(arr.begin() + index, value);
+    return arr;
+}
