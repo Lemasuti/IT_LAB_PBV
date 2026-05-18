@@ -1,1 +1,23 @@
-
+std::queue<int> execute(std::vector<std::string>& program) {
+    std::queue<int> q;
+    for (const std::string& cmd : program) {
+        if (cmd.rfind("push ", 0) == 0) {
+            int value = std::stoi(cmd.substr(5));
+            q.push(value);
+        } else if (cmd == "pop") {
+            if (q.empty()) {
+                std::cout << "Queue is empty!" << '\n';
+            } else {
+                q.pop();
+            }
+        } else if (cmd == "peek") {
+            if (q.empty()) {
+                std::cout << "Queue is empty!" << '\n';
+            } else {
+                std::cout << q.front() << '\n';
+            }
+        }
+    }
+    
+    return q;
+}
