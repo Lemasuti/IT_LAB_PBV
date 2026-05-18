@@ -1,1 +1,8 @@
-
+std::unordered_map<std::string, int> count_characters(std::string& s) {
+    std::unordered_map<std::string, int> freq;
+    for (char c : s) {
+        std::string key(1, c); 
+        freq[key]++;
+    }
+    return freq;
+}
