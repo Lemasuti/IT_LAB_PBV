@@ -1,1 +1,6 @@
-
+int append_and_count(std::vector<int>& arr, std::vector<int>& values) {
+    for (int v : values) {
+        arr.push_back(v);
+    }
+    return (int)arr.size();
+}
