@@ -1,1 +1,12 @@
-
+int search_linked_list(Node<int>* head, int target) {
+    Node<int>* current = head;
+    int index = 0;
+    while (current != nullptr) {
+        if (current->val == target) {
+            return index;
+        }
+        current = current->next;
+        index++;
+    }
+    return -1;
+}
