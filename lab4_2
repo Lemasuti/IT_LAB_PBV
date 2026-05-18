@@ -1,1 +1,8 @@
-
+std::string safe_modify_string(std::string& s, int index, std::string& new_char) {
+    if (index < 0 || index >= (int)s.length()) {
+        return s; 
+    }
+    std::string result = s; 
+    result[index] = new_char[0];
+    return result;
+}
